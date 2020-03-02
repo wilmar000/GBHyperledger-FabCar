@@ -45,3 +45,19 @@ To test the installation, initiate a `GET` request to `http://localhost:3000/que
 
 
 
+#### To install new chaincode
+
+Put your chaincode in `/fabric-samples/chaincode/<your chaincode folder>/javascript/`. The chaincode folder is mounted in the docker container.
+
+```
+docker exec -it cli bash
+peer chaincode install -l node -n fabcar -v 1.2 -p /opt/gopath/src/github.com/chaincode/<yourchaincode folder>/javascript/
+```
+
+Example for fabcar:
+
+```
+peer chaincode install -l node -n fabcar_new -v 1.2 -p /opt/gopath/src/github.com/chaincode/fabcar_new/javascript/
+
+peer chaincode instantiate -o orderer.example.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n fabcar_new -v 1.2 -c '{"Args":["initLedger"]}' -P "OR ('Org1MSP.member','Org2MSP.member')"
+```
