@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
     const { FileSystemWallet, Gateway } = require('fabric-network'); //Creates a new gateway and use it to connect to the network
     const path = require('path');
     
-    const ccpPath = path.resolve(__dirname, '..', '..','..', 'first-network', 'connection-org1.json');
+    const ccpPath = path.resolve(__dirname, '..', 'config', 'connection-org1.json');
     
     
         try {
