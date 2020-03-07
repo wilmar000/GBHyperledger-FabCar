@@ -33,13 +33,17 @@ async function main() {
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        const contract = network.getContract('fabcar');
+        const contract = network.getContract('realstate');
 
-        // Submit the specified transaction.
-        // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
-        // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-        await contract.submitTransaction('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom');
-        console.log('Transaction has been submitted');
+
+        // await contract.submitTransaction('createHouse', 'HOUSE12', '259 Richmond St W, Toronto, ON M5V 3M6', '(416) 368-5600', 'Movie Theater', 'People');
+        // console.log('createHouse has been submitted');
+        // await contract.submitTransaction('changeHouseOwner', 'HOUSE12', 'Wilmar');
+        // console.log('changeHouseOwner has been submitted');
+        // await contract.submitTransaction('queryHouse', 'HOUSE12');
+        // console.log('queryHouse has been submitted');
+        await contract.submitTransaction('queryAllHouses');
+        console.log('queryAllHouses has been submitted');
 
         // Disconnect from the gateway.
         await gateway.disconnect();
