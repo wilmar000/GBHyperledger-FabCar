@@ -41,7 +41,7 @@ router.get('/', async function(req, res, next) {
             // Get the contract from the network.
             const contract = network.getContract('realstate');
     
-
+            // Evaluate the specified transaction.
             const result = await contract.evaluateTransaction('queryHouse','HOUSE1');
             console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
             res.json(JSON.parse(result.toString()));

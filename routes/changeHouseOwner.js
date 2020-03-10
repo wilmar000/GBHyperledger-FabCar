@@ -42,9 +42,7 @@ router.get('/', async function(req, res, next) {
             const contract = network.getContract('realstate');
     
             // Evaluate the specified transaction.
-            // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')
-            // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-            const result = await contract.evaluateTransaction('queryAllHouses');
+            const result = await contract.evaluateTransaction('changeHouseOwner', 'HOUSE9', 'Wilmar');
             console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
             res.json(JSON.parse(result.toString()));
     

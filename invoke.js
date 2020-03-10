@@ -42,7 +42,7 @@ async function main() {
         // console.log('changeHouseOwner has been submitted');
         // await contract.submitTransaction('queryHouse', 'HOUSE12');
         // console.log('queryHouse has been submitted');
-        await contract.submitTransaction('queryAllHouses');
+        await contract.submitTransaction('queryHouse');
         console.log('queryAllHouses has been submitted');
 
         // Disconnect from the gateway.
