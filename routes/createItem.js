@@ -39,11 +39,11 @@ router.get('/', async function(req, res, next) {
             const network = await gateway.getNetwork('mychannel');
     
             // Get the contract from the network.
-            const contract = network.getContract('realstate');
+            const contract = network.getContract('marketplace');
     
-            // Evaluate the specified transaction.
-            const result = await contract.evaluateTransaction('queryAllHouses');
-            console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
+            // Evaluate the specified transaction. Item 10 is the next consecutive Item but this will change
+            const result = await contract.evaluateTransaction('createItem', 'ITEM10', '259 Richmond St W, Toronto, ON M5V 3M6', '(416) 368-5600', 'Movie Theater', 'People');
+            console.log(`createItem has been evaluated, result is: ${result.toString()}`);
             res.json(JSON.parse(result.toString()));
     
         } catch (error) {

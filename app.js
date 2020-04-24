@@ -6,10 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var queryAllHousesRouter = require('./routes/queryAllHouses');
-var queryHouseRouter = require('./routes/queryHouse');
-var createHouseRouter = require('./routes/createHouse');
-var changeHouseOwnerRouter = require('./routes/changeHouseOwner');
+var queryAllItemsRouter = require('./routes/queryAllItems');
+var queryItemRouter = require('./routes/queryItem');
+var createItemRouter = require('./routes/createItem');
+var changeItemOwnerRouter = require('./routes/changeItemOwner');
 
 var app = express();
 
@@ -25,10 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/queryAllHouses', queryAllHousesRouter);
-app.use('/queryHouse', queryHouseRouter);
-app.use('/createHouse', createHouseRouter);
-app.use('/changeHouseOwner', changeHouseOwnerRouter);
+app.use('/queryAllItems', queryAllItemsRouter);
+app.use('/queryItem', queryItemRouter);
+app.use('/createItem', createItemRouter);
+app.use('/changeItemOwner', changeItemOwnerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

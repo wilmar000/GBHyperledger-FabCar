@@ -36,14 +36,14 @@ async function main() {
         const contract = network.getContract('realstate');
 
 
-        // await contract.submitTransaction('createHouse', 'HOUSE12', '259 Richmond St W, Toronto, ON M5V 3M6', '(416) 368-5600', 'Movie Theater', 'People');
-        // console.log('createHouse has been submitted');
-        // await contract.submitTransaction('changeHouseOwner', 'HOUSE12', 'Wilmar');
-        // console.log('changeHouseOwner has been submitted');
-        // await contract.submitTransaction('queryHouse', 'HOUSE12');
-        // console.log('queryHouse has been submitted');
-        await contract.submitTransaction('queryHouse');
-        console.log('queryAllHouses has been submitted');
+        // await contract.submitTransaction('createItem', 'Item12', '259 Richmond St W, Toronto, ON M5V 3M6', '(416) 368-5600', 'Movie Theater', 'People');
+        // console.log('createItem has been submitted');
+        // await contract.submitTransaction('changeItemOwner', 'Item12', 'Wilmar');
+        // console.log('changeItemOwner has been submitted');
+        // await contract.submitTransaction('queryItem', 'Item12');
+        // console.log('queryItem has been submitted');
+        await contract.submitTransaction('queryItem');
+        console.log('queryAllItems has been submitted');
 
         // Disconnect from the gateway.
         await gateway.disconnect();

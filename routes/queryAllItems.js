@@ -39,10 +39,10 @@ router.get('/', async function(req, res, next) {
             const network = await gateway.getNetwork('mychannel');
     
             // Get the contract from the network.
-            const contract = network.getContract('realstate');
+            const contract = network.getContract('marketplace');
     
             // Evaluate the specified transaction.
-            const result = await contract.evaluateTransaction('queryHouse','HOUSE1');
+            const result = await contract.evaluateTransaction('queryAllItems');
             console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
             res.json(JSON.parse(result.toString()));
     
